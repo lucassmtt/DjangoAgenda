@@ -60,6 +60,8 @@ cover/
 local_settings.py
 db.sqlite3
 db.sqlite3-journal
+/media
+/static
 
 # Flask stuff:
 instance/
@@ -158,3 +160,5 @@ commands/commands.txt
 .idea/modules.xml
 .idea/vcs.xml
 .idea/dataSources.xml
+/home/lucas-motta/Documents/GitHubProjects/DjangoAgenda/.idea/.vscode
+.idea/.vscode/settings.json
