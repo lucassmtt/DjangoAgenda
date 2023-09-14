@@ -1,5 +1,5 @@
 {
-    "window.zoomLevel": 0,
+    "window.zoomLevel": 0.5,
     "editor.fontSize": 14,
     "editor.hover.enabled": true,
     "workbench.startupEditor": "none",
@@ -42,17 +42,10 @@
     "django.snippets.use": true,
     "djangointellisense.debugMessages": true,
     "[django-html]": {
-        "version": "0.2.0",
-        "configurations": [
-          {
-            "name": "Extension",
-            "type": "extensionHost",
-            "request": "launch",
-            "runtimeExecutable": "${execPath}",
-            "args": [
-              "--extensionDevelopmentPath=${workspaceFolder}"
-            ]
-          }
-        ]
+      "editor.quickSuggestions": {
+        "other": true,
+        "comments": true,
+        "strings": true,
       }
+    }
   }
