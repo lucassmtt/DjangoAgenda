@@ -1,6 +1,7 @@
+from django.db.models import Q
 from django.http import Http404
 from django.shortcuts import get_object_or_404, redirect, render
-from django.db.models import Q
+
 from contact.models import Contact
 
 
@@ -47,7 +48,7 @@ def contact_view(request, contact_id):
         'contact/contact.html',
         {
             'contact': contact,
-            'site_title': site_title
+            'site_title': site_title,
         }
     )
 
@@ -61,18 +62,19 @@ def search(request):
     contacts = Contact.objects \
         .filter(show=True) \
         .filter(
-            Q(first_name__contains = search_value)
-            | # logic operator or 
-            Q(last_name__contains = search_value) |
-            Q(phone__contains = search_value) |
-            Q(email__contains = search_value) 
-            ) \
+            Q(first_name__contains=search_value)
+            |  # logic operator or
+            Q(last_name__contains=search_value) |
+            Q(phone__contains=search_value) |
+            Q(email__contains=search_value)
+        ) \
         .order_by('-id') \
-            
-            
+
+
     context = {
         'contacts': contacts,
-        'site_title': 'Search - '
+        'site_title': 'Search - ',
+        'search_value': search_value,
     }
 
     return render(
